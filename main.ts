@@ -66,3 +66,6 @@ mySprite = sprites.create(img`
     . . . f f . . f f . . . . 
     `, SpriteKind.Player)
 mySprite.say(list)
+bubbleSort()
+pause(2000)
+mySprite.say(list)
