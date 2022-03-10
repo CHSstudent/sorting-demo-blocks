@@ -1,5 +1,6 @@
 {
     "name": "Sorting Demo (Blocks)",
+    "version": "0.0.1",
     "description": "",
     "dependencies": {
         "device": "*"
