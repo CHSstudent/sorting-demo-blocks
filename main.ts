@@ -1,11 +1,27 @@
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    list = [
+    8,
+    5,
+    3,
+    1,
+    4,
+    7,
+    9
+    ]
+    mySprite.say(list, 1000)
+})
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    selectionSort()
+    mySprite.say(list, 1000)
+})
 function swap (num: number, num2: number) {
     temp = list[num]
     list[num] = list[num2]
     list[num2] = temp
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    selectionSort()
-    mySprite.say(list)
+    bubbleSort()
+    mySprite.say(list, 1000)
 })
 function compare (a: number, b: number) {
     return a < b
@@ -65,6 +81,4 @@ mySprite = sprites.create(img`
     . . . f f f f f f . . . . 
     . . . f f . . f f . . . . 
     `, SpriteKind.Player)
-mySprite.say(list, 500)
-bubbleSort()
-mySprite.say(list, 500)
+mySprite.say(list, 1000)
