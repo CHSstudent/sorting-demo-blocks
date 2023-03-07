@@ -1,5 +1,5 @@
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    list = [
+    list2 = [
     8,
     5,
     3,
@@ -8,53 +8,63 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     7,
     9
     ]
-    mySprite.say(list, 1000)
+    mySprite.say(list2, 1000)
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     selectionSort()
-    mySprite.say(list, 1000)
+    mySprite.say(list2, 1000)
 })
 function swap (num: number, num2: number) {
-    temp = list[num]
-    list[num] = list[num2]
-    list[num2] = temp
+    temp = list2[num]
+    list2[num] = list2[num2]
+    list2[num2] = temp
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     bubbleSort()
-    mySprite.say(list, 1000)
+    mySprite.say(list2, 1000)
 })
 function compare (a: number, b: number) {
     return a < b
 }
 function bubbleSort () {
-    for (let index = 0; index <= list.length; index++) {
-        for (let index2 = 0; index2 <= index; index2++) {
-            if (compare(list[index], list[index2])) {
+    let index2: number;
+while (index <= list2.length) {
+        index2 = 0
+        while (index2 <= index) {
+            if (compare(list2[index], list2[index2])) {
                 swap(index, index2)
             }
+            index2 += 1
         }
+        index += 1
     }
 }
 function selectionSort () {
-    for (let index = 0; index <= list.length; index++) {
-        min = 0
-        for (let index2 = 0; index2 <= list.length; index2++) {
-            index2 = index + 1
-            if (compare(list[index2], min)) {
-                min = index2
+    let index22: number;
+while (index3 <= list2.length) {
+        min2 = 0
+        index22 = 0
+        while (index22 <= list2.length) {
+            index22 = index3 + 1
+            if (compare(list2[index22], min2)) {
+                min2 = index22
             }
+            index22 += 1
         }
-        if (index != min) {
-            swap(index, min)
+        if (index3 != min2) {
+            swap(index3, min2)
         }
+        index3 += 1
     }
 }
-let min = 0
+let min2 = 0
+let index3 = 0
+let index = 0
 let temp = 0
 let mySprite: Sprite = null
-let list: number[] = []
+let list2: number[] = []
 scene.setBackgroundColor(6)
-list = [
+list2 = [
 8,
 5,
 3,
@@ -81,4 +91,4 @@ mySprite = sprites.create(img`
     . . . f f f f f f . . . . 
     . . . f f . . f f . . . . 
     `, SpriteKind.Player)
-mySprite.say(list, 1000)
+mySprite.say(list2, 1000)
